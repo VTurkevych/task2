@@ -11,10 +11,10 @@ import {
 } from "redux-persist";
 import storage from 'redux-persist/lib/storage';
 
-import BookSlice from "../reducer/Slice";
+import BookSlice from "../reducer/Reducer";
 
 const rootReducer = combineReducers({
-    books: BookSlice,
+    booksReducer: BookSlice,
 });
 const persistConfig = {
     key: 'root',

@@ -1,14 +1,16 @@
-import CreateBookForm from "../createBookForm/CreateBookForm";
 import BookList from "../bookList/BookList";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {useState} from "react";
+import EditBook from "../editBook/EditBook";
 
 export default function HomeWindow (){
-    const {value}= useSelector(state => state.books);
-    console.log(value)
+    const {value,obj} = useSelector(state => state.booksReducer);
+    const [active, setActive] = useState(false);
+    const dispatch = useDispatch();
     return (
         <div>
-            <CreateBookForm/>
-            <BookList value={value}/>
+            <BookList  value={value} setActive={setActive} dispatch={dispatch}/>
+            <EditBook value={value} active={active} setActive={setActive} obj={obj} dispatch={dispatch}/>
         </div>
         );
 }

@@ -1,10 +1,12 @@
 import './App.css';
-import HomeWindow from "./components/homeWindow/HomeWindow";
+import Routing from "./routing/Routing";
+import Header from "./components/header/Header";
 
 function App() {
     return (
         <div className="App">
-            <HomeWindow/>
+            <Header/>
+            <Routing/>
         </div>
     );
 }
