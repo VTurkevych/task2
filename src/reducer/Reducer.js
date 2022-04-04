@@ -5,10 +5,11 @@ export const BookSlice = createSlice({
     name: 'books',
     initialState: {
         value: [],
-        obj:{},
+        obj: {},
     },
 
     reducers: {
+
         addBooks(state, action) {
             const newBooks = {
                 id: uuid(),
@@ -19,20 +20,20 @@ export const BookSlice = createSlice({
             }
             state.value.push(newBooks)
         },
-        editBookModal(state, action){
+        editBookModal(state, action) {
             state.value = action.payload
         },
-        objBook(state,action){
+        objBook(state, action) {
             state.obj = action.payload
         },
-        deleteBook(state, action){
-            return {...state, value : state.value.filter(value=> value.id !== action.payload)}
+        deleteBook(state, action) {
+            return {...state, value: state.value.filter(value => value.id !== action.payload)}
         }
 
 
     }
 });
 
-export const {addBooks,editBookModal,objBook,deleteBook} = BookSlice.actions;
+export const {addBooks, editBookModal, objBook, deleteBook,bookFetching} = BookSlice.actions;
 
 export default BookSlice.reducer;

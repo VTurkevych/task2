@@ -1,3 +1,10 @@
 .interface{
-    display: flex;
+     background-color: rgba(0,467,443,0.4);
+
 }
+.face{
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+}
+

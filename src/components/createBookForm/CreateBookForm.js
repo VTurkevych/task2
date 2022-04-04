@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {addBooks} from "../../reducer/Reducer";
+import './CreateBookForm.css'
 
 
 export default function CreateBookForm() {
@@ -18,15 +19,15 @@ export default function CreateBookForm() {
             setAuthor('')
             setSelect('')
             setISBN(0)
-        }catch (e){
+        } catch (e) {
             console.log(e)
-        }finally {
+        } finally {
         }
 
     };
 
     return (
-        <div>
+        <div className='input'>
             <form onSubmit={onSubmit}>
                 <div>
                     <input type="text"
@@ -49,11 +50,14 @@ export default function CreateBookForm() {
                            value={ISBN}
                            onChange={({target: {value}}) => setISBN(value)}
                     />
+                </div>
+                <div className='input'>
                     <button disabled={!titleBook || !author || !select || !ISBN}
                             type='submit'
                     >Add book
                     </button>
                 </div>
+
             </form>
         </div>
     );
